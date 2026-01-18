@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>W&I Cleaning Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #111;
+    }
+
+    header {
+      background: #111;
+      color: #fff;
+      padding: 20px;
+    }
+
+    .header-content {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn {
+      background: #fff;
+      color: #111;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 0 10px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .service {
+      display: flex;
+      justify-content: space-between;
+      background: #f0f3ff;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      padding: 15px;
+      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-content">
+    <div>
+      <h2>W&I Cleaning Services</h2>
+      <small>Reliable cleaning for homes, offices, and vacation rentals</small>
+    </div>
+
+    <!-- Botão que abre o chat em outra aba -->
+    <a 
+      class="btn" 
+      href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat"
+      target="_blank"
+    >
+      Open Chat
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Serviços -->
+  <div class="card">
+    <h3>Services & Prices</h3>
+
+    <div class="service">
+      <span>Deep Clean</span>
+      <strong>$180</strong>
+    </div>
+
+    <div class="service">
+      <span>Small House</span>
+      <strong>$120</strong>
+    </div>
+
+    <div class="service">
+      <span>Vacation Home</span>
+      <strong>$140</strong>
+    </div>
+
+    <div class="service">
+      <span>Office</span>
+      <strong>$130</strong>
+    </div>
+
+    <p>
+      Use the chat to schedule. We will ask your name, phone, address, service type and preferred date.
+    </p>
+
+    <p><strong>Email:</strong> wellpch@icloud.com</p>
+    <p><strong>Service Area:</strong> Mechanicville, NY</p>
+  </div>
+
+  <!-- Chat embutido -->
+  <div class="card">
+    <h3>Chat & Schedule</h3>
+    <iframe 
+      src="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat"
+      loading="lazy"
+    ></iframe>
+  </div>
+
+</main>
+
+<footer>
+  © 2026 W&I Cleaning Services. All rights reserved.
+</footer>
+
+</body>
+</html>
