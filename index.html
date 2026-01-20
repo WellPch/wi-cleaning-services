@@ -2,195 +2,543 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>W&I Cleaning Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WI Cleaning Services</title>
 
-  <!-- SEO básico -->
-  <meta name="description" content="W&I Cleaning Services – Reliable cleaning for homes, offices, and vacation rentals. Schedule your cleaning easily through our chat."/>
-  <meta name="keywords" content="cleaning services, house cleaning, office cleaning, vacation rental cleaning, Mechanicville NY"/>
-  <meta name="author" content="W&I Cleaning Services"/>
+  <meta name="description" content="WI Cleaning Services – Professional cleaning for homes, offices, and vacation rentals. Schedule easily via chat." />
+  <meta name="theme-color" content="#0B1220" />
 
-  <!-- Estilo do site -->
   <style>
-    :root { --max: 1100px; }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f7fb;
-      color: #111;
+    :root{
+      --bg: #F5F7FB;
+      --ink: #0B1220;
+      --muted: #5B667A;
+      --brand: #14B8A6;
+      --card: #ffffff;
+      --shadow: 0 16px 40px rgba(11,18,32,.10);
+      --radius: 18px;
+      --max: 1160px;
     }
 
-    header {
-      background: #0d0d0d;
-      color: white;
-      padding: 20px;
+    *{ box-sizing: border-box; }
+    html, body{ margin:0; padding:0; }
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.45;
     }
 
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 16px;
-    }
+    a{ color: inherit; text-decoration: none; }
+    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 18px; }
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    /* ====== NAV ====== */
+    .nav{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(11,18,32,.06);
+    }
+    .nav-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
       gap: 12px;
+      min-width: 260px;
     }
-
-    .brand h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    .brand p {
-      margin: 0;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-
-    .btn {
-      background: #ffffff;
-      color: #000;
-      padding: 10px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      border: none;
-      cursor: pointer;
-    }
-
-    main {
-      padding: 40px 16px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .card {
-      background: white;
+    .logo{
+      width: 64px;
+      height: 64px;
       border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      object-fit: cover;
+      box-shadow: 0 10px 22px rgba(20,184,166,.18);
+      background: #e8f9f6;
+      border: 1px solid rgba(11,18,32,.08);
     }
-
-    h2 {
-      margin-top: 0;
+    .brand-title{
+      display:flex;
+      flex-direction:column;
+      line-height: 1.05;
     }
-
-    .service {
-      background: #f2f5ff;
-      padding: 14px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .brand-title strong{
+      font-size: 16px;
     }
-
-    .price {
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
+    .brand-title span{
       font-size: 12px;
-      color: #666;
+      color: var(--muted);
+      margin-top: 4px;
     }
+
+    .menu{
+      display:flex;
+      align-items:center;
+      gap: 22px;
+      font-weight: 600;
+      color: rgba(11,18,32,.78);
+    }
+    .menu a{
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .menu a:hover{ background: rgba(20,184,166,.10); color: var(--ink); }
+
+    .right{
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      min-width: 260px;
+      justify-content:flex-end;
+    }
+
+    .ig{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(11,18,32,.10);
+      background: #fff;
+      color: rgba(11,18,32,.78);
+      font-weight: 700;
+    }
+    .ig:hover{ border-color: rgba(20,184,166,.35); }
+    .ig svg{ width: 16px; height: 16px; }
+
+    .btn{
+      border: 0;
+      cursor:pointer;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 18px 34px rgba(20,184,166,.25);
+      transition: transform .08s ease;
+      white-space: nowrap;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn.secondary{
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid rgba(11,18,32,.12);
+      box-shadow: none;
+      font-weight: 900;
+    }
+
+    /* ====== HERO ====== */
+    .hero{
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 26px 26px;
+      background:
+        linear-gradient(135deg, rgba(11,18,32,.82), rgba(11,18,32,.50)),
+        /* Photo without goggles/mask */
+        url("menu.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+    .hero-inner{
+      padding: 58px 0 44px;
+      display:flex;
+      justify-content:center;
+      text-align:center;
+    }
+    .hero-content{
+      width: min(860px, 100%);
+    }
+
+    .hero h1{
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.02;
+      margin: 0 0 12px;
+      letter-spacing: .2px;
+    }
+    .hero p{
+      margin: 0 auto 22px;
+      color: rgba(255,255,255,.90);
+      font-size: 16px;
+      max-width: 720px;
+    }
+
+    .cta-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    /* Floating chat bubble button */
+    .chat-bubble{
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      display:flex;
+      align-items:center;
+      gap: 10px;
+      background: #fff;
+      color: var(--ink);
+      border-radius: 999px;
+      padding: 12px 14px;
+      box-shadow: 0 16px 40px rgba(11,18,32,.16);
+      border: 1px solid rgba(11,18,32,.10);
+      font-weight: 900;
+    }
+    .chat-bubble:hover{ border-color: rgba(20,184,166,.35); }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(20,184,166,.18);
+    }
+
+    /* chips */
+    .chips{
+      display:flex;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .chip{
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 12px;
+      color: rgba(255,255,255,.92);
+    }
+
+    /* ====== SECTION ====== */
+    .section{
+      padding: 42px 0 10px;
+    }
+    .section h2{
+      text-align:center;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: clamp(26px, 3vw, 38px);
+      margin: 0 0 14px;
+      color: var(--ink);
+    }
+    .sub{
+      text-align:center;
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto 26px;
+    }
+
+    /* ====== SERVICES GRID ====== */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+      margin-top: 10px;
+    }
+    @media (max-width: 1100px){
+      .grid{ grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 760px){
+      .menu{ display:none; }
+      .brand{ min-width: auto; }
+      .right{ min-width: auto; }
+      .grid{ grid-template-columns: 1fr; }
+      .ig{ display:none; }
+      .logo{ width: 54px; height: 54px; }
+      .hero-inner{ padding: 44px 0 34px; }
+    }
+
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      border: 1px solid rgba(11,18,32,.06);
+    }
+    .card img{
+      width:100%;
+      height: 180px;
+      object-fit: cover;
+      display:block;
+    }
+    .card-body{
+      padding: 16px 16px 18px;
+    }
+    .card h3{
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .card p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ====== ABOUT ====== */
+    .two{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px;
+      margin-top: 28px;
+      align-items:start;
+    }
+    @media (max-width: 900px){
+      .two{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 20px;
+      border: 1px solid rgba(11,18,32,.06);
+    }
+    .panel h3{
+      margin: 0 0 10px;
+      font-size: 20px;
+    }
+    .panel p{
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .panel-actions{
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    /* ====== FOOTER ====== */
+    footer{
+      margin-top: 50px;
+      background: #0B1220;
+      color: rgba(255,255,255,.86);
+      padding: 22px 0;
+    }
+    .foot{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+    .foot a{
+      color: rgba(255,255,255,.92);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .foot-ig{
+      display:flex;
+      align-items:center;
+      gap: 8px;
+    }
+    .foot-ig svg{ width: 16px; height: 16px; fill: currentColor; }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap top">
-    <div class="brand">
-      <h1>W&I Cleaning Services</h1>
-      <p>Reliable cleaning for homes, offices, and vacation rentals.</p>
+  <!-- NAV -->
+  <div class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <!-- TIP: rename your logo file to "logo.jpg" and update the src to: src="logo.jpg" -->
+        <img class="logo" src="logo2.jpeg" alt="WI Cleaning Services logo" />
+        <div class="brand-title">
+          <strong>WI Cleaning Services</strong>
+          <span>Homes • Offices • Vacation Rentals</span>
+        </div>
+      </div>
+
+      <nav class="menu" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="right">
+        <a class="ig" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
+          <!-- Instagram icon -->
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
+          </svg>
+          Instagram
+        </a>
+
+        <a class="btn" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">
+          Open Chat
+        </a>
+      </div>
     </div>
-
-    <a 
-      href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat"
-      target="_blank"
-      class="btn"
-    >
-      Open Chat 💬
-    </a>
   </div>
-</header>
 
-<main class="wrap">
-  <div class="grid">
+  <!-- HERO -->
+  <header class="hero">
+    <div class="wrap hero-inner">
+      <div class="hero-content">
+        <h1>WI Cleaning <br/>Cleaning Services You Can Trust</h1>
 
-    <!-- Services -->
-    <section class="card">
-      <h2>Services & Prices</h2>
+        <p>
+          We deliver consistent, detail-focused cleaning that makes your home feel fresh again.
+          Kitchens, bathrooms, floors, and high-touch areas — we take care of the mess so you can enjoy your time.
+        </p>
 
-      <div class="service">
-        <div>Deep Clean</div>
-        <div class="price">$180</div>
+        <!-- Only 2 buttons here (as requested) -->
+        <div class="cta-row">
+          <a class="btn" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">
+            Open Chat
+          </a>
+          <a class="btn secondary" href="#services">View Services</a>
+        </div>
+
+        <div class="chips">
+          <div class="chip">Detail-focused</div>
+          <div class="chip">Consistent results</div>
+          <div class="chip">Respectful & careful</div>
+          <div class="chip">Easy scheduling</div>
+        </div>
       </div>
+    </div>
+  </header>
 
-      <div class="service">
-        <div>Small House</div>
-        <div class="price">$120</div>
-      </div>
-
-      <div class="service">
-        <div>Vacation Home</div>
-        <div class="price">$140</div>
-      </div>
-
-      <div class="service">
-        <div>Office</div>
-        <div class="price">$130</div>
-      </div>
-
-      <p>
-        Use our chat to schedule your service quickly and easily.
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <h2>Cleaning services that meet your needs</h2>
+      <p class="sub">
+        Tell us what you need — we’ll recommend the best service and help you schedule quickly.
       </p>
-    </section>
 
-    <!-- Chat -->
-    <aside class="card">
-      <h2>Chat & Schedule</h2>
-      <p>Click below to open our chat in a new tab and schedule your cleaning.</p>
+      <div class="grid">
+        <!-- 1) House Cleaning -->
+        <article class="card">
+          <img src="home clean.jpeg" alt="Home cleaning" />
+          <div class="card-body">
+            <h3>Home Cleaning</h3>
+            <p>Kitchen, bathrooms, bedrooms, living areas, dusting, vacuuming, mopping, and finishing touches.</p>
+          </div>
+        </article>
 
-      <a
-        href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat"
-        target="_blank"
-        class="btn"
-        style="display:block;text-align:center;margin-top:20px;"
-      >
-        Start Chat 💬
-      </a>
-    </aside>
+        <!-- 2) Deep Clean -->
+        <article class="card">
+          <img src="deep clean.jpeg" alt="Deep cleaning" />
+          <div class="card-body">
+            <h3>Deep Clean</h3>
+            <p>A full reset with extra detail: buildup removal, baseboards, corners, and the areas most people miss.</p>
+          </div>
+        </article>
 
-  </div>
-</main>
+        <!-- 3) Office -->
+        <article class="card">
+          <img src="Office clean.jpeg" alt="Office cleaning" />
+          <div class="card-body">
+            <h3>Office Cleaning</h3>
+            <p>Workspaces, common areas, restrooms, floors — a clean office that feels professional and welcoming.</p>
+          </div>
+        </article>
 
-<footer>
-  © <span id="year"></span> W&I Cleaning Services. All rights reserved.
-</footer>
+        <!-- 4) Vacation Home -->
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1400&q=80" alt="Vacation rental cleaning" />
+          <div class="card-body">
+            <h3>Vacation Home</h3>
+            <p>Turnover-ready cleaning for rentals: fresh presentation, clean surfaces, and guest-ready details.</p>
+          </div>
+        </article>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+        <!-- 5) Carpet / Bathroom Focus -->
+        <article class="card">
+          <!-- Vacuum carpet -->
+          <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1400&q=80" alt="Vacuum cleaning carpet" />
+          <div class="card-body">
+            <h3>Special Requests</h3>
+            <p>Carpet vacuuming, bathrooms, high-touch areas, and custom needs — just tell us what matters most to you.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ABOUT + CONTACT -->
+      <div class="two">
+        <div id="about" class="panel">
+          <h3>About WI Cleaning Services</h3>
+          <p>
+            We’re a cleaning company that takes pride in quality, consistency, and respect for your space.
+            Our goal is simple: leave your home looking fresh, smelling clean, and feeling truly comfortable — every time.
+          </p>
+
+          <!-- No extra chat button here (to reduce "chat" on the page) -->
+          <div class="panel-actions">
+            <a class="btn secondary" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
+              View Instagram
+            </a>
+          </div>
+        </div>
+
+        <div id="contact" class="panel">
+          <h3>Schedule</h3>
+          <p>
+            Use the chat bubble (bottom right) or the “Open Chat” button in the top menu to request a quote or schedule your cleaning.
+            We’ll reply as soon as possible.
+          </p>
+
+          <!-- One extra info instead of another chat button -->
+          <p style="margin-top:10px;">
+            <strong>Service area:</strong> Mechanicville, NY (edit anytime)
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong>WI Cleaning Services</strong><br/>
+        © <span id="year"></span> All rights reserved.
+      </div>
+
+      <div class="foot-ig">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
+        </svg>
+        <span>Instagram:</span>
+        <a href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
+          @wi_cleaning_services
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating chat bubble (ONLY ONE) -->
+  <a class="chat-bubble" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener" aria-label="Chat to schedule">
+    <span class="dot"></span>
+    Chat to schedule
+  </a>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
