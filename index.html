@@ -3,542 +3,564 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WI Cleaning Services</title>
-
-  <meta name="description" content="WI Cleaning Services – Professional cleaning for homes, offices, and vacation rentals. Schedule easily via chat." />
-  <meta name="theme-color" content="#0B1220" />
+  <title>W&I Cleaning Services</title>
+  <meta name="description" content="W&I Cleaning Services – Professional cleaning for homes, offices, and vacation rentals. Schedule easily via chat." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --bg: #F5F7FB;
-      --ink: #0B1220;
-      --muted: #5B667A;
-      --brand: #14B8A6;
-      --card: #ffffff;
-      --shadow: 0 16px 40px rgba(11,18,32,.10);
-      --radius: 18px;
-      --max: 1160px;
+    :root {
+      --navy:        #09111f;
+      --navy-2:      #0e1a2e;
+      --navy-3:      #152035;
+      --gold:        #c9a052;
+      --gold-bright: #e2bc74;
+      --gold-dim:    rgba(201,160,82,.15);
+      --gold-line:   rgba(201,160,82,.22);
+      --white:       #ffffff;
+      --muted:       #7a8da8;
+      --r:           14px;
+      --max:         1120px;
     }
 
-    *{ box-sizing: border-box; }
-    html, body{ margin:0; padding:0; }
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.45;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      overflow-x: hidden;
+      line-height: 1.6;
     }
 
-    a{ color: inherit; text-decoration: none; }
-    .wrap{ max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
 
-    /* ====== NAV ====== */
-    .nav{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(11,18,32,.06);
-    }
-    .nav-inner{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 16px;
-      padding: 14px 0;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-      min-width: 260px;
-    }
-    .logo{
-      width: 64px;
-      height: 64px;
-      border-radius: 14px;
-      object-fit: cover;
-      box-shadow: 0 10px 22px rgba(20,184,166,.18);
-      background: #e8f9f6;
-      border: 1px solid rgba(11,18,32,.08);
-    }
-    .brand-title{
-      display:flex;
-      flex-direction:column;
-      line-height: 1.05;
-    }
-    .brand-title strong{
-      font-size: 16px;
-    }
-    .brand-title span{
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 4px;
+    /* grain */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+      opacity: .028; pointer-events: none; z-index: 9999;
     }
 
-    .menu{
-      display:flex;
-      align-items:center;
-      gap: 22px;
-      font-weight: 600;
-      color: rgba(11,18,32,.78);
+    /* ── NAV ── */
+    .nav {
+      position: sticky; top: 0; z-index: 500;
+      background: rgba(9,17,31,.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--gold-line);
     }
-    .menu a{
-      padding: 8px 10px;
-      border-radius: 10px;
+    .nav-inner {
+      display: flex; align-items: center;
+      justify-content: space-between;
+      gap: 18px; padding: 14px 0;
     }
-    .menu a:hover{ background: rgba(20,184,166,.10); color: var(--ink); }
+    .brand { display: flex; align-items: center; gap: 13px; }
+    .logo {
+      width: 58px; height: 58px; border-radius: 50%;
+      object-fit: cover; border: 2px solid var(--gold);
+      box-shadow: 0 0 24px rgba(201,160,82,.3);
+    }
+    .brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px; font-weight: 700; line-height: 1.1;
+    }
+    .brand-sub {
+      font-size: 9.5px; font-weight: 600;
+      letter-spacing: 2.4px; text-transform: uppercase;
+      color: var(--gold); margin-top: 3px;
+    }
+    .nav-menu {
+      display: flex; gap: 28px;
+      font-size: 11.5px; font-weight: 600;
+      letter-spacing: 1.4px; text-transform: uppercase;
+    }
+    .nav-menu a { color: rgba(255,255,255,.65); transition: color .2s; }
+    .nav-menu a:hover { color: var(--gold); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-ig {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border-radius: 999px;
+      border: 1px solid var(--gold-line);
+      font-size: 11px; font-weight: 600;
+      color: rgba(255,255,255,.7);
+      transition: border-color .2s, color .2s;
+    }
+    .nav-ig:hover { border-color: var(--gold); color: var(--gold); }
+    .nav-ig svg { width: 14px; height: 14px; fill: currentColor; }
 
-    .right{
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      min-width: 260px;
-      justify-content:flex-end;
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 20px; border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      color: var(--navy); font-weight: 700;
+      font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase;
+      box-shadow: 0 6px 28px rgba(201,160,82,.38);
+      transition: transform .15s, box-shadow .15s;
+      border: none; cursor: pointer; white-space: nowrap;
     }
+    .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 14px 40px rgba(201,160,82,.5); }
 
-    .ig{
-      display:flex;
-      align-items:center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(11,18,32,.10);
-      background: #fff;
-      color: rgba(11,18,32,.78);
-      font-weight: 700;
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 10px 20px; border-radius: 999px;
+      border: 1px solid rgba(201,160,82,.4);
+      color: var(--gold); font-weight: 700;
+      font-size: 11.5px; letter-spacing: 1px; text-transform: uppercase;
+      transition: background .2s, border-color .2s;
     }
-    .ig:hover{ border-color: rgba(20,184,166,.35); }
-    .ig svg{ width: 16px; height: 16px; }
+    .btn-ghost:hover { background: var(--gold-dim); border-color: var(--gold); }
 
-    .btn{
-      border: 0;
-      cursor:pointer;
-      padding: 12px 16px;
-      border-radius: 999px;
-      font-weight: 900;
-      background: var(--brand);
-      color: #fff;
-      box-shadow: 0 18px 34px rgba(20,184,166,.25);
-      transition: transform .08s ease;
-      white-space: nowrap;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap: 8px;
+    /* ── HERO ── */
+    .hero {
+      position: relative; overflow: hidden;
+      min-height: 90vh; display: flex; align-items: center;
     }
-    .btn:hover{ transform: translateY(-1px); }
-    .btn.secondary{
-      background: #fff;
-      color: var(--ink);
-      border: 1px solid rgba(11,18,32,.12);
-      box-shadow: none;
-      font-weight: 900;
-    }
-
-    /* ====== HERO ====== */
-    .hero{
-      position: relative;
-      overflow: hidden;
-      border-radius: 0 0 26px 26px;
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
       background:
-        linear-gradient(135deg, rgba(11,18,32,.82), rgba(11,18,32,.50)),
-        /* Photo without goggles/mask */
-        url("menu.jpeg");
-      background-size: cover;
-      background-position: center;
-      color: #fff;
+        linear-gradient(130deg, rgba(9,17,31,.97) 0%, rgba(9,17,31,.70) 55%, rgba(9,17,31,.88) 100%),
+        url("menu.jpeg") center/cover no-repeat;
     }
-    .hero-inner{
-      padding: 58px 0 44px;
-      display:flex;
-      justify-content:center;
-      text-align:center;
+    .hero-hatch {
+      position: absolute; right: 0; top: 0; bottom: 0;
+      width: 44%; z-index: 1; opacity: .055;
+      background: repeating-linear-gradient(
+        -50deg, var(--gold) 0px, var(--gold) 1px,
+        transparent 1px, transparent 11px
+      );
     }
-    .hero-content{
-      width: min(860px, 100%);
+    .hero-glow {
+      position: absolute; z-index: 1; right: -10%; top: -10%;
+      width: 70vw; height: 70vw; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,160,82,.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; z-index: 2; padding: 100px 0 80px; width: 100%; }
+    .hero-content { max-width: 660px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10.5px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 22px;
+    }
+    .eyebrow::before {
+      content: ''; display: block; width: 38px; height: 1px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 6vw, 76px);
+      font-weight: 700; line-height: 1.02;
+      letter-spacing: -.5px; margin-bottom: 22px;
+    }
+    .hero h1 span { color: var(--gold); font-style: italic; }
+    .hero-desc {
+      font-size: 15px; font-weight: 300;
+      color: rgba(255,255,255,.72);
+      max-width: 510px; line-height: 1.75; margin-bottom: 38px;
+    }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .badges { display: flex; gap: 9px; flex-wrap: wrap; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 13px; border-radius: 999px;
+      border: 1px solid var(--gold-line);
+      background: rgba(255,255,255,.03);
+      font-size: 11px; font-weight: 500; color: rgba(255,255,255,.65);
+    }
+    .badge::before { content: '✦'; font-size: 7px; color: var(--gold); }
+
+    /* ── GOLD BAR ── */
+    .gold-bar {
+      background: linear-gradient(90deg, var(--gold) 0%, var(--gold-bright) 100%);
+      padding: 16px 0;
+    }
+    .gold-bar-inner {
+      display: flex; justify-content: center;
+      align-items: center; gap: 56px; flex-wrap: wrap;
+    }
+    .stat { text-align: center; color: var(--navy); }
+    .stat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px; font-weight: 700; line-height: 1;
+    }
+    .stat-l {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      opacity: .65; margin-top: 2px;
     }
 
-    .hero h1{
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(34px, 5vw, 56px);
-      line-height: 1.02;
-      margin: 0 0 12px;
-      letter-spacing: .2px;
+    /* ── SECTIONS ── */
+    .section { padding: 78px 0; }
+    .s-tag {
+      display: inline-flex; align-items: center; gap: 9px;
+      font-size: 9.5px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 12px;
     }
-    .hero p{
-      margin: 0 auto 22px;
-      color: rgba(255,255,255,.90);
-      font-size: 16px;
-      max-width: 720px;
+    .s-tag::before { content: ''; display: block; width: 22px; height: 1px; background: var(--gold); }
+    .s-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 3.8vw, 46px);
+      font-weight: 700; line-height: 1.06; margin-bottom: 14px;
     }
+    .s-sub { font-size: 14px; color: var(--muted); max-width: 520px; line-height: 1.75; font-weight: 300; }
+    .section-head { margin-bottom: 48px; }
+    .section-head.center { text-align: center; }
+    .section-head.center .s-tag { justify-content: center; }
+    .section-head.center .s-sub { margin: 0 auto; }
 
-    .cta-row{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    /* Floating chat bubble button */
-    .chat-bubble{
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 60;
-      display:flex;
-      align-items:center;
-      gap: 10px;
-      background: #fff;
-      color: var(--ink);
-      border-radius: 999px;
-      padding: 12px 14px;
-      box-shadow: 0 16px 40px rgba(11,18,32,.16);
-      border: 1px solid rgba(11,18,32,.10);
-      font-weight: 900;
-    }
-    .chat-bubble:hover{ border-color: rgba(20,184,166,.35); }
-    .dot{
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--brand);
-      box-shadow: 0 0 0 6px rgba(20,184,166,.18);
-    }
-
-    /* chips */
-    .chips{
-      display:flex;
-      justify-content:center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-    .chip{
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.18);
-      padding: 10px 12px;
-      border-radius: 14px;
-      font-weight: 800;
-      font-size: 12px;
-      color: rgba(255,255,255,.92);
-    }
-
-    /* ====== SECTION ====== */
-    .section{
-      padding: 42px 0 10px;
-    }
-    .section h2{
-      text-align:center;
-      font-family: Georgia, "Times New Roman", Times, serif;
-      font-size: clamp(26px, 3vw, 38px);
-      margin: 0 0 14px;
-      color: var(--ink);
-    }
-    .sub{
-      text-align:center;
-      color: var(--muted);
-      max-width: 760px;
-      margin: 0 auto 26px;
-    }
-
-    /* ====== SERVICES GRID ====== */
-    .grid{
-      display:grid;
+    /* ── SERVICES ── */
+    .svc-grid {
+      display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 18px;
-      margin-top: 10px;
     }
-    @media (max-width: 1100px){
-      .grid{ grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 1080px) { .svc-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 640px)  { .svc-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 420px)  { .svc-grid { grid-template-columns: 1fr; } }
+
+    .svc-card {
+      background: var(--navy-2);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--r); overflow: hidden;
+      transition: transform .25s, border-color .25s, box-shadow .25s;
     }
-    @media (max-width: 760px){
-      .menu{ display:none; }
-      .brand{ min-width: auto; }
-      .right{ min-width: auto; }
-      .grid{ grid-template-columns: 1fr; }
-      .ig{ display:none; }
-      .logo{ width: 54px; height: 54px; }
-      .hero-inner{ padding: 44px 0 34px; }
+    .svc-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,160,82,.5);
+      box-shadow: 0 28px 56px rgba(0,0,0,.45);
+    }
+    .svc-card img {
+      width: 100%; height: 175px; object-fit: cover;
+      filter: brightness(.78) saturate(.85);
+      transition: filter .35s;
+    }
+    .svc-card:hover img { filter: brightness(.9) saturate(1); }
+    .svc-body { padding: 18px 16px 20px; }
+    .svc-ico {
+      width: 34px; height: 34px;
+      background: var(--gold-dim); border: 1px solid var(--gold-line);
+      border-radius: 9px; display: flex; align-items: center;
+      justify-content: center; font-size: 16px; margin-bottom: 10px;
+    }
+    .svc-body h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px; font-weight: 700; margin-bottom: 6px;
+    }
+    .svc-body p { font-size: 12px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* ── TWO COL ── */
+    .two { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; }
+    @media (max-width: 840px) { .two { grid-template-columns: 1fr; } }
+
+    .panel {
+      background: var(--navy-2);
+      border: 1px solid var(--gold-line);
+      border-radius: var(--r); padding: 32px;
+      position: relative; overflow: hidden;
+    }
+    .panel::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 72px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
+    .panel h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px; font-weight: 700; margin-bottom: 14px;
+    }
+    .panel p { font-size: 13px; font-weight: 300; color: rgba(255,255,255,.65); line-height: 1.8; margin-bottom: 14px; }
+    .panel-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+    .contact-row {
+      display: flex; align-items: flex-start; gap: 13px;
+      padding: 14px 0; border-bottom: 1px solid rgba(201,160,82,.07);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .c-ico {
+      width: 38px; height: 38px; flex-shrink: 0;
+      background: var(--gold-dim); border: 1px solid var(--gold-line);
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-size: 17px;
+    }
+    .c-lbl {
+      font-size: 9.5px; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 3px;
+    }
+    .c-val { font-size: 13px; color: rgba(255,255,255,.78); font-weight: 400; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--gold-line) 50%, transparent 100%);
     }
 
-    .card{
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      border: 1px solid rgba(11,18,32,.06);
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--gold-line); padding: 26px 0; background: rgba(0,0,0,.3); }
+    .foot { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 700; }
+    .foot-copy { font-size: 11px; color: var(--muted); margin-top: 3px; }
+    .foot-ig {
+      display: flex; align-items: center; gap: 7px;
+      font-size: 12px; font-weight: 600; color: rgba(255,255,255,.6); transition: color .2s;
     }
-    .card img{
-      width:100%;
-      height: 180px;
-      object-fit: cover;
-      display:block;
+    .foot-ig:hover { color: var(--gold); }
+    .foot-ig svg { width: 15px; height: 15px; fill: currentColor; }
+
+    /* ── CHAT FLOAT ── */
+    .chat-float {
+      position: fixed; right: 20px; bottom: 20px; z-index: 600;
+      display: flex; align-items: center; gap: 9px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-bright));
+      color: var(--navy); padding: 13px 20px; border-radius: 999px;
+      font-weight: 700; font-size: 13px; letter-spacing: .4px;
+      box-shadow: 0 14px 42px rgba(201,160,82,.5);
+      animation: float 3.5s ease-in-out infinite;
     }
-    .card-body{
-      padding: 16px 16px 18px;
+    .chat-float:hover { animation-play-state: paused; transform: translateY(-2px) scale(1.02); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-5px); }
     }
-    .card h3{
-      margin: 0 0 8px;
-      font-size: 18px;
+    .pulse {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--navy);
+      animation: pulse 2s infinite;
     }
-    .card p{
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 4px rgba(9,17,31,.25); }
+      50%       { box-shadow: 0 0 0 8px rgba(9,17,31,.08); }
     }
 
-    /* ====== ABOUT ====== */
-    .two{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 18px;
-      margin-top: 28px;
-      align-items:start;
-    }
-    @media (max-width: 900px){
-      .two{ grid-template-columns: 1fr; }
-    }
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: .08s; }
+    .d2 { transition-delay: .16s; }
+    .d3 { transition-delay: .24s; }
+    .d4 { transition-delay: .32s; }
+    .d5 { transition-delay: .40s; }
 
-    .panel{
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      padding: 20px;
-      border: 1px solid rgba(11,18,32,.06);
+    @media (max-width: 760px) {
+      .nav-menu { display: none; }
+      .nav-ig   { display: none; }
     }
-    .panel h3{
-      margin: 0 0 10px;
-      font-size: 20px;
-    }
-    .panel p{
-      margin: 0 0 14px;
-      color: var(--muted);
-    }
-    .panel-actions{
-      display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
-
-    /* ====== FOOTER ====== */
-    footer{
-      margin-top: 50px;
-      background: #0B1220;
-      color: rgba(255,255,255,.86);
-      padding: 22px 0;
-    }
-    .foot{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap: 12px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-    .foot a{
-      color: rgba(255,255,255,.92);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .foot-ig{
-      display:flex;
-      align-items:center;
-      gap: 8px;
-    }
-    .foot-ig svg{ width: 16px; height: 16px; fill: currentColor; }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <div class="nav">
-    <div class="wrap nav-inner">
-      <div class="brand">
-        <!-- TIP: rename your logo file to "logo.jpg" and update the src to: src="logo.jpg" -->
-        <img class="logo" src="logo.jpeg" alt="WI Cleaning Services logo" />
-        <div class="brand-title">
-          <strong>WI Cleaning Services</strong>
-          <span>Homes • Offices • Vacation Rentals</span>
-        </div>
+<!-- NAV -->
+<div class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <img class="logo" src="Logo1.jpeg" alt="W&I Cleaning Services logo" />
+      <div>
+        <div class="brand-name">W&amp;I Cleaning Services</div>
+        <div class="brand-sub">Homes · Offices · Vacation Rentals</div>
       </div>
+    </div>
+    <nav class="nav-menu">
+      <a href="#sobre">About</a>
+      <a href="#servicos">Services</a>
+      <a href="#contato">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="nav-ig" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+        Instagram
+      </a>
+      <a class="btn-gold" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">
+        Book Now
+      </a>
+    </div>
+  </div>
+</div>
 
-      <nav class="menu" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="right">
-        <a class="ig" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
-          <!-- Instagram icon -->
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
-          </svg>
-          Instagram
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-hatch"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow">Professional cleaning you can trust</div>
+      <h1>Your space deserves<br/><span>real care</span></h1>
+      <p class="hero-desc">
+        At W&amp;I Cleaning Services, every detail matters.
+        Kitchens, bathrooms, floors, common areas —
+        we take care of what you value most with attention, consistency, and respect.
+      </p>
+      <div class="hero-cta">
+        <a class="btn-gold" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">
+          ✦ &nbsp;Get a Free Quote
         </a>
-
-        <a class="btn" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">
-          Open Chat
-        </a>
+        <a class="btn-ghost" href="#servicos">View Services</a>
+      </div>
+      <div class="badges">
+        <div class="badge">Detail-focused</div>
+        <div class="badge">Consistent results</div>
+        <div class="badge">Respectful & careful</div>
+        <div class="badge">Easy scheduling</div>
       </div>
     </div>
   </div>
+</header>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-content">
-        <h1>WI Cleaning <br/>Cleaning Services You Can Trust</h1>
+<!-- GOLD BAR -->
+<div class="gold-bar">
+  <div class="wrap gold-bar-inner">
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">Satisfaction Guaranteed</div></div>
+    <div class="stat"><div class="stat-n">5 ★</div><div class="stat-l">Client Rating</div></div>
+    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Service Types</div></div>
+    <div class="stat"><div class="stat-n">NY</div><div class="stat-l">Mechanicville & Area</div></div>
+  </div>
+</div>
 
+<!-- SERVICES -->
+<section id="servicos" class="section">
+  <div class="wrap">
+    <div class="section-head center">
+      <div class="s-tag reveal">Our Services</div>
+      <h2 class="s-title reveal">Cleaning that makes a difference</h2>
+      <p class="s-sub reveal">From a routine clean to a full deep clean — we tailor the service to exactly what you need.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc-card reveal d1">
+        <img src="home clean.jpeg" alt="Home Cleaning" />
+        <div class="svc-body">
+          <div class="svc-ico">🏠</div>
+          <h3>Home Cleaning</h3>
+          <p>Kitchen, bathrooms, bedrooms, and living areas — full cleaning with attention to every corner of your home.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal d2">
+        <img src="deep clean.jpeg" alt="Deep Cleaning" />
+        <div class="svc-body">
+          <div class="svc-ico">✨</div>
+          <h3>Deep Clean</h3>
+          <p>Buildup removal, baseboards, corners, and everything usually overlooked. A complete fresh start.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal d3">
+        <img src="Office clean.jpeg" alt="Office Cleaning" />
+        <div class="svc-body">
+          <div class="svc-ico">🏢</div>
+          <h3>Office Cleaning</h3>
+          <p>Workspaces and common areas — a clean, professional environment for your team and clients.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal d4">
+        <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=900&q=80" alt="Vacation Rental" />
+        <div class="svc-body">
+          <div class="svc-ico">🛎️</div>
+          <h3>Vacation Rental</h3>
+          <p>Turnover-ready cleaning between guests: flawless presentation and guest-ready details every time.</p>
+        </div>
+      </article>
+      <article class="svc-card reveal d5">
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=900&q=80" alt="Special Requests" />
+        <div class="svc-body">
+          <div class="svc-ico">💬</div>
+          <h3>Special Requests</h3>
+          <p>Carpets, bathrooms, high-touch areas — just tell us what matters most to you.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT + CONTACT -->
+<section class="section">
+  <div class="wrap">
+    <div class="two">
+      <div id="sobre" class="panel reveal">
+        <h3>About W&amp;I Cleaning Services</h3>
         <p>
-          We deliver consistent, detail-focused cleaning that makes your home feel fresh again.
-          Kitchens, bathrooms, floors, and high-touch areas — we take care of the mess so you can enjoy your time.
+          We are a cleaning company that takes pride in quality, consistency, and respect for your space.
+          Our goal is simple: leave your home spotless, fresh, and truly comfortable — every single time.
         </p>
+        <p>
+          Every client receives personalized attention. We use safe products,
+          a dedicated team, and full commitment to delivering results you'll notice.
+        </p>
+        <div class="panel-actions">
+          <a class="btn-ghost" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">View Instagram</a>
+          <a class="btn-gold" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">Get in Touch</a>
+        </div>
+      </div>
 
-        <!-- Only 2 buttons here (as requested) -->
-        <div class="cta-row">
-          <a class="btn" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener">
-            Open Chat
+      <div id="contato" class="panel reveal d1">
+        <h3>Schedule Your Cleaning</h3>
+        <div class="contact-row">
+          <div class="c-ico">💬</div>
+          <div>
+            <div class="c-lbl">Online Chat</div>
+            <div class="c-val">Click "Book Now" — we respond quickly</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-ico">📍</div>
+          <div>
+            <div class="c-lbl">Service Area</div>
+            <div class="c-val">Mechanicville, NY and surrounding area</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="c-ico">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="var(--gold)"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+          </div>
+          <div>
+            <div class="c-lbl">Instagram</div>
+            <div class="c-val">@wi_cleaning_services</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;">
+          <a class="btn-gold" style="width:100%;justify-content:center;"
+             href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat"
+             target="_blank" rel="noopener">
+            ✦ &nbsp;Request a Quote Now
           </a>
-          <a class="btn secondary" href="#services">View Services</a>
-        </div>
-
-        <div class="chips">
-          <div class="chip">Detail-focused</div>
-          <div class="chip">Consistent results</div>
-          <div class="chip">Respectful & careful</div>
-          <div class="chip">Easy scheduling</div>
         </div>
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <!-- SERVICES -->
-  <section id="services" class="section">
-    <div class="wrap">
-      <h2>Cleaning services that meet your needs</h2>
-      <p class="sub">
-        Tell us what you need — we’ll recommend the best service and help you schedule quickly.
-      </p>
-
-      <div class="grid">
-        <!-- 1) House Cleaning -->
-        <article class="card">
-          <img src="home clean.jpeg" alt="Home cleaning" />
-          <div class="card-body">
-            <h3>Home Cleaning</h3>
-            <p>Kitchen, bathrooms, bedrooms, living areas, dusting, vacuuming, mopping, and finishing touches.</p>
-          </div>
-        </article>
-
-        <!-- 2) Deep Clean -->
-        <article class="card">
-          <img src="deep clean.jpeg" alt="Deep cleaning" />
-          <div class="card-body">
-            <h3>Deep Clean</h3>
-            <p>A full reset with extra detail: buildup removal, baseboards, corners, and the areas most people miss.</p>
-          </div>
-        </article>
-
-        <!-- 3) Office -->
-        <article class="card">
-          <img src="Office clean.jpeg" alt="Office cleaning" />
-          <div class="card-body">
-            <h3>Office Cleaning</h3>
-            <p>Workspaces, common areas, restrooms, floors — a clean office that feels professional and welcoming.</p>
-          </div>
-        </article>
-
-        <!-- 4) Vacation Home -->
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?auto=format&fit=crop&w=1400&q=80" alt="Vacation rental cleaning" />
-          <div class="card-body">
-            <h3>Vacation Home</h3>
-            <p>Turnover-ready cleaning for rentals: fresh presentation, clean surfaces, and guest-ready details.</p>
-          </div>
-        </article>
-
-        <!-- 5) Carpet / Bathroom Focus -->
-        <article class="card">
-          <!-- Vacuum carpet -->
-          <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1400&q=80" alt="Vacuum cleaning carpet" />
-          <div class="card-body">
-            <h3>Special Requests</h3>
-            <p>Carpet vacuuming, bathrooms, high-touch areas, and custom needs — just tell us what matters most to you.</p>
-          </div>
-        </article>
-      </div>
-
-      <!-- ABOUT + CONTACT -->
-      <div class="two">
-        <div id="about" class="panel">
-          <h3>About WI Cleaning Services</h3>
-          <p>
-            We’re a cleaning company that takes pride in quality, consistency, and respect for your space.
-            Our goal is simple: leave your home looking fresh, smelling clean, and feeling truly comfortable — every time.
-          </p>
-
-          <!-- No extra chat button here (to reduce "chat" on the page) -->
-          <div class="panel-actions">
-            <a class="btn secondary" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
-              View Instagram
-            </a>
-          </div>
-        </div>
-
-        <div id="contact" class="panel">
-          <h3>Schedule</h3>
-          <p>
-            Use the chat bubble (bottom right) or the “Open Chat” button in the top menu to request a quote or schedule your cleaning.
-            We’ll reply as soon as possible.
-          </p>
-
-          <!-- One extra info instead of another chat button -->
-          <p style="margin-top:10px;">
-            <strong>Service area:</strong> Mechanicville, NY (edit anytime)
-          </p>
-        </div>
-      </div>
-
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <div class="foot-brand">W&amp;I Cleaning Services</div>
+      <div class="foot-copy">© <span id="yr"></span> All rights reserved.</div>
     </div>
-  </section>
+    <a class="foot-ig" href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/></svg>
+      @wi_cleaning_services
+    </a>
+  </div>
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="wrap foot">
-      <div>
-        <strong>WI Cleaning Services</strong><br/>
-        © <span id="year"></span> All rights reserved.
-      </div>
+<!-- FLOATING CHAT -->
+<a class="chat-float"
+   href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat"
+   target="_blank" rel="noopener" aria-label="Chat to schedule">
+  <span class="pulse"></span>
+  Chat to schedule
+</a>
 
-      <div class="foot-ig">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm8.5 1.5h-8.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm6.4-.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0Z"/>
-        </svg>
-        <span>Instagram:</span>
-        <a href="https://www.instagram.com/wi_cleaning_services?igsh=MXM4dG4ydm1qc2FsZQ==" target="_blank" rel="noopener">
-          @wi_cleaning_services
-        </a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating chat bubble (ONLY ONE) -->
-  <a class="chat-bubble" href="https://wellpch.app.n8n.cloud/webhook/d49ca6d5-6aff-4703-a6ff-3cf8af9f6116/chat" target="_blank" rel="noopener" aria-label="Chat to schedule">
-    <span class="dot"></span>
-    Chat to schedule
-  </a>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
 </body>
 </html>
